@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{F3B9A519-CF8B-4CDC-B2BF-74CE8D3CBDA8}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Penyata</RootNamespace>
+    <AssemblyName>Penyata</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSharpDirectInput">
+      <HintPath>libraries\CSharpDirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>libraries\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>libraries\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions">
+      <HintPath>libraries\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>libraries\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>libraries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SDL2-CS">
+      <HintPath>libraries\SDL2-CS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application.cs" />
+    <Compile Include="Bases\BaseDrawUpdate.cs" />
+    <Compile Include="Bases\Collider.cs" />
+    <Compile Include="Bases\Component.cs" />
+    <Compile Include="Bases\GameObject.cs" />
+    <Compile Include="Bases\MonoBehaviour.cs" />
+    <Compile Include="Bases\Object.cs" />
+    <Compile Include="Bases\Scene.cs" />
+    <Compile Include="Components\BoxCollider.cs" />
+    <Compile Include="Components\BoxRenderer.cs" />
+    <Compile Include="Components\Camera.cs" />
+    <Compile Include="Components\DragableObject.cs" />
+    <Compile Include="Components\LineRenderer.cs" />
+    <Compile Include="Components\SpriteRenderer.cs" />
+    <Compile Include="Components\TextRenderer.cs" />
+    <Compile Include="Components\Transform.cs" />
+    <Compile Include="Forms\DebugTaker.cs" />
+    <Compile Include="Forms\DebugTaker.Designer.cs">
+      <DependentUpon>DebugTaker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI.cs" />
+    <Compile Include="GUI\GUIContainer.cs" />
+    <Compile Include="GUI\GUILabel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Root\HandleManager.cs" />
+    <Compile Include="Root\ProcessManager.cs" />
+    <Compile Include="Root\RendererManager.cs" />
+    <Compile Include="Scripting\Compiler.cs" />
+    <Compile Include="Scripting\Project.cs" />
+    <Compile Include="Scripting\SolutionGenerator.cs" />
+    <Compile Include="Serialization\SerializerConverters.cs" />
+    <Compile Include="Serialization\SerializedComponent.cs" />
+    <Compile Include="Serialization\SerializedGameObject.cs" />
+    <Compile Include="Structs\Color.cs" />
+    <Compile Include="Structs\Enums.cs" />
+    <Compile Include="Structs\Structs.cs" />
+    <Compile Include="Structs\Vector2.cs" />
+    <Compile Include="Structs\Window.cs" />
+    <Compile Include="Tools\Collision.cs" />
+    <Compile Include="Tools\Configuration.cs" />
+    <Compile Include="Tools\Coroutine.cs" />
+    <Compile Include="Tools\CursorToolkit.cs" />
+    <Compile Include="Tools\Debug.cs" />
+    <Compile Include="Tools\Drawer.cs" />
+    <Compile Include="Tools\Input.cs" />
+    <Compile Include="Tools\Mathf.cs" />
+    <Compile Include="Tools\MathfInternal.cs" />
+    <Compile Include="Tools\ObjectManager.cs" />
+    <Compile Include="Tools\SceneManager.cs" />
+    <Compile Include="Tools\StringToolkit.cs" />
+    <Compile Include="Tools\Time.cs" />
+    <Compile Include="Tools\Utility.cs" />
+    <Compile Include="Tools\WindowForm.cs" />
+    <Compile Include="Tools\WindowManager.cs" />
+    <Compile Include="Tools\XMLTools.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DefaultProject.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="libfreetype-6.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SDL2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SDL2_ttf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="zlib1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Bases" />
+    <Folder Include="Components" />
+    <Folder Include="Forms" />
+    <Folder Include="GUI" />
+    <Folder Include="Root" />
+    <Folder Include="Scripting" />
+    <Folder Include="Serialization" />
+    <Folder Include="Tools" />
+    <Folder Include="Structs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\DebugTaker.resx">
+      <DependentUpon>DebugTaker.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
